@@ -1,4 +1,4 @@
-package serveriwill2;
+package ServidorPizarra;
 
 import org.jdesktop.application.Application;
 import org.jdesktop.application.SingleFrameApplication;
