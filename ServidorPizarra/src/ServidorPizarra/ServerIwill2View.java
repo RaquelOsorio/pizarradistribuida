@@ -1,4 +1,4 @@
-package serveriwill2;
+package ServidorPizarra;
 
 import org.jdesktop.application.Action;
 import org.jdesktop.application.ResourceMap;
@@ -113,7 +113,7 @@ public class ServerIwill2View extends FrameView {
 
         mainPanel.setName("mainPanel"); // NOI18N
 
-        org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance(serveriwill2.ServerIwill2App.class).getContext().getResourceMap(ServerIwill2View.class);
+        org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance(ServidorPizarra.ServerIwill2App.class).getContext().getResourceMap(ServerIwill2View.class);
         jLabel1.setText(resourceMap.getString("jLabel1.text")); // NOI18N
         jLabel1.setName("jLabel1"); // NOI18N
 
@@ -139,7 +139,7 @@ public class ServerIwill2View extends FrameView {
         fileMenu.setText(resourceMap.getString("fileMenu.text")); // NOI18N
         fileMenu.setName("fileMenu"); // NOI18N
 
-        javax.swing.ActionMap actionMap = org.jdesktop.application.Application.getInstance(serveriwill2.ServerIwill2App.class).getContext().getActionMap(ServerIwill2View.class, this);
+        javax.swing.ActionMap actionMap = org.jdesktop.application.Application.getInstance(ServidorPizarra.ServerIwill2App.class).getContext().getActionMap(ServerIwill2View.class, this);
         exitMenuItem.setAction(actionMap.get("quit")); // NOI18N
         exitMenuItem.setName("exitMenuItem"); // NOI18N
         fileMenu.add(exitMenuItem);
