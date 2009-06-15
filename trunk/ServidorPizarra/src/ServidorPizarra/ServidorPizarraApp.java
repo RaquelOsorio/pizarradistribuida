@@ -3,13 +3,13 @@ package ServidorPizarra;
 import org.jdesktop.application.Application;
 import org.jdesktop.application.SingleFrameApplication;
 
-public class ServerIwill2App extends SingleFrameApplication {
+public class ServidorPizarraApp extends SingleFrameApplication {
 
     /**
      * At startup create and show the main frame of the application.
      */
     @Override protected void startup() {
-        show(new ServerIwill2View(this));
+        show(new ServidorPizarraView(this));
     }
 
     /**
@@ -22,16 +22,16 @@ public class ServerIwill2App extends SingleFrameApplication {
 
     /**
      * A convenient static getter for the application instance.
-     * @return the instance of ServerIwill2App
+     * @return the instance of ServidorPizarraApp
      */
-    public static ServerIwill2App getApplication() {
-        return Application.getInstance(ServerIwill2App.class);
+    public static ServidorPizarraApp getApplication() {
+        return Application.getInstance(ServidorPizarraApp.class);
     }
 
     /**
      * Main method launching the application.
      */
     public static void main(String[] args) {
-        launch(ServerIwill2App.class, args);
+        launch(ServidorPizarraApp.class, args);
     }
 }
