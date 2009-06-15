@@ -17,9 +17,9 @@ import manejadorRMIServer.manejadorRMIServer;
 /**
  * The application's main frame.
  */
-public class ServerIwill2View extends FrameView {
+public class ServidorPizarraView extends FrameView {
 
-    public ServerIwill2View(SingleFrameApplication app) {
+    public ServidorPizarraView(SingleFrameApplication app) {
         super(app);
         Servidor();
         initComponents();
@@ -28,6 +28,7 @@ public class ServerIwill2View extends FrameView {
         ResourceMap resourceMap = getResourceMap();
         int messageTimeout = resourceMap.getInteger("StatusBar.messageTimeout");
         messageTimer = new Timer(messageTimeout, new ActionListener() {
+
             public void actionPerformed(ActionEvent e) {
                 statusMessageLabel.setText("");
             }
@@ -38,6 +39,7 @@ public class ServerIwill2View extends FrameView {
             busyIcons[i] = resourceMap.getIcon("StatusBar.busyIcons[" + i + "]");
         }
         busyIconTimer = new Timer(busyAnimationRate, new ActionListener() {
+
             public void actionPerformed(ActionEvent e) {
                 busyIconIndex = (busyIconIndex + 1) % busyIcons.length;
                 statusAnimationLabel.setIcon(busyIcons[busyIconIndex]);
@@ -50,6 +52,7 @@ public class ServerIwill2View extends FrameView {
         // connecting action tasks to status bar via TaskMonitor
         TaskMonitor taskMonitor = new TaskMonitor(getApplication().getContext());
         taskMonitor.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+
             public void propertyChange(java.beans.PropertyChangeEvent evt) {
                 String propertyName = evt.getPropertyName();
                 if ("started".equals(propertyName)) {
@@ -66,11 +69,11 @@ public class ServerIwill2View extends FrameView {
                     progressBar.setVisible(false);
                     progressBar.setValue(0);
                 } else if ("message".equals(propertyName)) {
-                    String text = (String)(evt.getNewValue());
+                    String text = (String) (evt.getNewValue());
                     statusMessageLabel.setText((text == null) ? "" : text);
                     messageTimer.restart();
                 } else if ("progress".equals(propertyName)) {
-                    int value = (Integer)(evt.getNewValue());
+                    int value = (Integer) (evt.getNewValue());
                     progressBar.setVisible(true);
                     progressBar.setIndeterminate(false);
                     progressBar.setValue(value);
@@ -82,11 +85,11 @@ public class ServerIwill2View extends FrameView {
     @Action
     public void showAboutBox() {
         if (aboutBox == null) {
-            JFrame mainFrame = ServerIwill2App.getApplication().getMainFrame();
-            aboutBox = new ServerIwill2AboutBox(mainFrame);
+            JFrame mainFrame = ServidorPizarraApp.getApplication().getMainFrame();
+            aboutBox = new ServidorPizarraAboutBox(mainFrame);
             aboutBox.setLocationRelativeTo(mainFrame);
         }
-        ServerIwill2App.getApplication().show(aboutBox);
+        ServidorPizarraApp.getApplication().show(aboutBox);
     }
 
     /** This method is called from within the constructor to
@@ -113,7 +116,7 @@ public class ServerIwill2View extends FrameView {
 
         mainPanel.setName("mainPanel"); // NOI18N
 
-        org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance(ServidorPizarra.ServerIwill2App.class).getContext().getResourceMap(ServerIwill2View.class);
+        org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance(ServidorPizarra.ServidorPizarraApp.class).getContext().getResourceMap(ServidorPizarraView.class);
         jLabel1.setText(resourceMap.getString("jLabel1.text")); // NOI18N
         jLabel1.setName("jLabel1"); // NOI18N
 
@@ -139,7 +142,7 @@ public class ServerIwill2View extends FrameView {
         fileMenu.setText(resourceMap.getString("fileMenu.text")); // NOI18N
         fileMenu.setName("fileMenu"); // NOI18N
 
-        javax.swing.ActionMap actionMap = org.jdesktop.application.Application.getInstance(ServidorPizarra.ServerIwill2App.class).getContext().getActionMap(ServerIwill2View.class, this);
+        javax.swing.ActionMap actionMap = org.jdesktop.application.Application.getInstance(ServidorPizarra.ServidorPizarraApp.class).getContext().getActionMap(ServidorPizarraView.class, this);
         exitMenuItem.setAction(actionMap.get("quit")); // NOI18N
         exitMenuItem.setName("exitMenuItem"); // NOI18N
         fileMenu.add(exitMenuItem);
@@ -206,15 +209,14 @@ public class ServerIwill2View extends FrameView {
     private javax.swing.JLabel statusMessageLabel;
     private javax.swing.JPanel statusPanel;
     // End of variables declaration//GEN-END:variables
-
     private final Timer messageTimer;
     private final Timer busyIconTimer;
     private final Icon idleIcon;
     private final Icon[] busyIcons = new Icon[15];
     private int busyIconIndex = 0;
-
     private JDialog aboutBox;
-      public void Servidor() {
+
+    public void Servidor() {
 
         Registry registro;
 
@@ -232,7 +234,7 @@ public class ServerIwill2View extends FrameView {
             manejadorRMIServer.setArticulo(registro);
             manejadorRMIServer.setConvocatoria(registro);
             manejadorRMIServer.setPostulacion(registro);
-       
+
             System.out.println("Servidor: On-Line");
 
         } catch (Exception e) {

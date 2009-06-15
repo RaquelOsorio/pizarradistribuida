@@ -1,14 +1,14 @@
 /*
- * ServerIwill2AboutBox.java
+ * ServidorPizarraAboutBox.java
  */
 
 package ServidorPizarra;
 
 import org.jdesktop.application.Action;
 
-public class ServerIwill2AboutBox extends javax.swing.JDialog {
+public class ServidorPizarraAboutBox extends javax.swing.JDialog {
 
-    public ServerIwill2AboutBox(java.awt.Frame parent) {
+    public ServidorPizarraAboutBox(java.awt.Frame parent) {
         super(parent);
         initComponents();
         getRootPane().setDefaultButton(closeButton);
@@ -38,13 +38,13 @@ public class ServerIwill2AboutBox extends javax.swing.JDialog {
         javax.swing.JLabel imageLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance(ServidorPizarra.ServerIwill2App.class).getContext().getResourceMap(ServerIwill2AboutBox.class);
+        org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance(ServidorPizarra.ServidorPizarraApp.class).getContext().getResourceMap(ServidorPizarraAboutBox.class);
         setTitle(resourceMap.getString("title")); // NOI18N
         setModal(true);
         setName("aboutBox"); // NOI18N
         setResizable(false);
 
-        javax.swing.ActionMap actionMap = org.jdesktop.application.Application.getInstance(ServidorPizarra.ServerIwill2App.class).getContext().getActionMap(ServerIwill2AboutBox.class, this);
+        javax.swing.ActionMap actionMap = org.jdesktop.application.Application.getInstance(ServidorPizarra.ServidorPizarraApp.class).getContext().getActionMap(ServidorPizarraAboutBox.class, this);
         closeButton.setAction(actionMap.get("closeAboutBox")); // NOI18N
         closeButton.setName("closeButton"); // NOI18N
 
