@@ -13,7 +13,7 @@
             </test-roots>
         </data>
         <swingapp xmlns="http://www.netbeans.org/ns/form-swingapp/1">
-            <application-class name="ServidorPizarra.ServerIwill2App"/>
+            <application-class name="ServidorPizarra.ServidorPizarraApp"/>
         </swingapp>
     </configuration>
 </project>
